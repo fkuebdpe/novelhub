@@ -1,0 +1,282 @@
+[
+    {
+        "id": "rebirth-of-the-legendary-sword-master",
+        "title": "Rebirth of the Legendary Sword Master",
+        "author": "Wei Qian",
+        "genre": "Fantasy",
+        "status": "ongoing",
+        "rating": "4.8",
+        "views": 2500000,
+        "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=fantasy%20sword%20master%20warrior%20epic%20novel%20cover%20art%20magical%20weapon%20medieval%20style&image_size=portrait_4_3",
+        "description": "After dying at the hands of his enemies, the legendary sword master Chen Fan is reborn back to his youth. Armed with the knowledge of his past life, he must now walk the path of cultivation again, this time with greater determination and wisdom. Follow his journey as he rises from a humble disciple to become the strongest swordsman in the world.",
+        "updatedAt": "2024-01-15T10:30:00Z",
+        "chapters": [
+            {
+                "id": "ch1",
+                "number": 1,
+                "title": "Rebirth",
+                "wordCount": 3500,
+                "updatedAt": "2024-01-01T08:00:00Z"
+            },
+            {
+                "id": "ch2",
+                "number": 2,
+                "title": "The Path of Swords",
+                "wordCount": 3200,
+                "updatedAt": "2024-01-02T08:00:00Z"
+            },
+            {
+                "id": "ch3",
+                "number": 3,
+                "title": "First Blood",
+                "wordCount": 3800,
+                "updatedAt": "2024-01-03T08:00:00Z"
+            },
+            {
+                "id": "ch4",
+                "number": 4,
+                "title": "Entering the Sect",
+                "wordCount": 3100,
+                "updatedAt": "2024-01-04T08:00:00Z"
+            },
+            {
+                "id": "ch5",
+                "number": 5,
+                "title": "The Discrimination",
+                "wordCount": 3400,
+                "updatedAt": "2024-01-05T08:00:00Z"
+            },
+            {
+                "id": "ch6",
+                "number": 6,
+                "title": "Hidden Talent",
+                "wordCount": 3600,
+                "updatedAt": "2024-01-06T08:00:00Z"
+            },
+            {
+                "id": "ch7",
+                "number": 7,
+                "title": "The Sword Test",
+                "wordCount": 3900,
+                "updatedAt": "2024-01-07T08:00:00Z"
+            },
+            {
+                "id": "ch8",
+                "number": 8,
+                "title": "Rising Star",
+                "wordCount": 3300,
+                "updatedAt": "2024-01-08T08:00:00Z"
+            },
+            {
+                "id": "ch9",
+                "number": 9,
+                "title": "Dark Clouds",
+                "wordCount": 3700,
+                "updatedAt": "2024-01-09T08:00:00Z"
+            },
+            {
+                "id": "ch10",
+                "number": 10,
+                "title": "The Battle Begins",
+                "wordCount": 4000,
+                "updatedAt": "2024-01-10T08:00:00Z"
+            }
+        ]
+    },
+    {
+        "id": "the-emperors-concubine",
+        "title": "The Emperor's Concubine",
+        "author": "Ling Yue",
+        "genre": "Romance",
+        "status": "completed",
+        "rating": "4.6",
+        "views": 1800000,
+        "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=ancient%20chinese%20palace%20concubine%20beautiful%20woman%20romance%20novel%20cover%20art%20elegant%20traditional%20clothing&image_size=portrait_4_3",
+        "description": "In the treacherous world of the imperial harem, a young girl from a fallen noble family must navigate through schemes and intrigues to survive. She catches the eye of the emperor, but with that attention comes danger from jealous rivals. Will she find true love in the cold palace, or will she become another victim of power struggles?",
+        "updatedAt": "2024-01-14T14:00:00Z",
+        "chapters": [
+            {
+                "id": "tc1",
+                "number": 1,
+                "title": "Entering the Palace",
+                "wordCount": 3000,
+                "updatedAt": "2024-01-01T09:00:00Z"
+            },
+            {
+                "id": "tc2",
+                "number": 2,
+                "title": "First Encounter",
+                "wordCount": 3200,
+                "updatedAt": "2024-01-02T09:00:00Z"
+            },
+            {
+                "id": "tc3",
+                "number": 3,
+                "title": "Jealous Eyes",
+                "wordCount": 2800,
+                "updatedAt": "2024-01-03T09:00:00Z"
+            },
+            {
+                "id": "tc4",
+                "number": 4,
+                "title": "The Empress",
+                "wordCount": 3100,
+                "updatedAt": "2024-01-04T09:00:00Z"
+            },
+            {
+                "id": "tc5",
+                "number": 5,
+                "title": "A Secret Alliance",
+                "wordCount": 2900,
+                "updatedAt": "2024-01-05T09:00:00Z"
+            }
+        ]
+    },
+    {
+        "id": "city-of-shadows",
+        "title": "City of Shadows",
+        "author": "Chen Mo",
+        "genre": "Action",
+        "status": "ongoing",
+        "rating": "4.7",
+        "views": 1200000,
+        "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20city%20night%20dark%20underground%20crime%20action%20thriller%20novel%20cover%20art%20neon%20lights%20mysterious&image_size=portrait_4_3",
+        "description": "In the bustling metropolis of Jiangcheng, there exists a hidden world of assassins, mercenaries, and secret organizations. Lin Hao, a former special forces operative, is drawn into this dark underworld after his sister's disappearance. With his combat skills and sharp instincts, he must uncover the truth behind her vanishing and confront the powerful forces that rule the city's shadows.",
+        "updatedAt": "2024-01-15T09:00:00Z",
+        "chapters": [
+            {
+                "id": "sc1",
+                "number": 1,
+                "title": "The Missing Sister",
+                "wordCount": 3400,
+                "updatedAt": "2024-01-01T10:00:00Z"
+            },
+            {
+                "id": "sc2",
+                "number": 2,
+                "title": "Entering the Underworld",
+                "wordCount": 3600,
+                "updatedAt": "2024-01-02T10:00:00Z"
+            },
+            {
+                "id": "sc3",
+                "number": 3,
+                "title": "First Kill",
+                "wordCount": 3200,
+                "updatedAt": "2024-01-03T10:00:00Z"
+            }
+        ]
+    },
+    {
+        "id": "journey-to-the-west-reborn",
+        "title": "Journey to the West: Reborn",
+        "author": "Wu Cheng'en Jr.",
+        "genre": "Adventure",
+        "status": "ongoing",
+        "rating": "4.9",
+        "views": 3200000,
+        "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=journey%20to%20the%20west%20monkey%20king%20sun%20wukong%20fantasy%20adventure%20novel%20cover%20art%20mythical%20creatures%20epic&image_size=portrait_4_3",
+        "description": "A modern man is mysteriously transported into the world of Journey to the West, becoming the legendary Monkey King, Sun Wukong. But this is not the story he remembers from the classic novel - the world is darker, more dangerous, and the path to enlightenment is fraught with greater challenges. With his modern knowledge and the Monkey King's powers, he must forge his own destiny in this mythical realm.",
+        "updatedAt": "2024-01-15T11:00:00Z",
+        "chapters": [
+            {
+                "id": "jc1",
+                "number": 1,
+                "title": "Rebirth as the Monkey King",
+                "wordCount": 4000,
+                "updatedAt": "2024-01-01T11:00:00Z"
+            },
+            {
+                "id": "jc2",
+                "number": 2,
+                "title": "The Mountain of Flowers and Fruit",
+                "wordCount": 3800,
+                "updatedAt": "2024-01-02T11:00:00Z"
+            },
+            {
+                "id": "jc3",
+                "number": 3,
+                "title": "The Golden Cudgel",
+                "wordCount": 3500,
+                "updatedAt": "2024-01-03T11:00:00Z"
+            },
+            {
+                "id": "jc4",
+                "number": 4,
+                "title": "Heavenly Palace",
+                "wordCount": 4200,
+                "updatedAt": "2024-01-04T11:00:00Z"
+            }
+        ]
+    },
+    {
+        "id": "my-cute-roommate",
+        "title": "My Cute Roommate",
+        "author": "Xiao Mi",
+        "genre": "Comedy",
+        "status": "completed",
+        "rating": "4.5",
+        "views": 900000,
+        "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=cute%20anime%20style%20roommate%20comedy%20romance%20novel%20cover%20art%20modern%20apartment%20light%20hearted%20happy&image_size=portrait_4_3",
+        "description": "Lin Yu never expected that his new roommate would be such a handful - or so cute! From morning chaos to late-night snack raids, living with the energetic and quirky Su Xiaoxiao turns his ordinary life into a hilarious adventure. Follow their daily misadventures as they navigate college life, friendship, and maybe even a little romance.",
+        "updatedAt": "2024-01-13T16:00:00Z",
+        "chapters": [
+            {
+                "id": "mc1",
+                "number": 1,
+                "title": "The Unexpected Roommate",
+                "wordCount": 2800,
+                "updatedAt": "2024-01-01T14:00:00Z"
+            },
+            {
+                "id": "mc2",
+                "number": 2,
+                "title": "Morning Chaos",
+                "wordCount": 2600,
+                "updatedAt": "2024-01-02T14:00:00Z"
+            },
+            {
+                "id": "mc3",
+                "number": 3,
+                "title": "Midnight Snack Run",
+                "wordCount": 2900,
+                "updatedAt": "2024-01-03T14:00:00Z"
+            }
+        ]
+    },
+    {
+        "id": "dragon-prince",
+        "title": "Dragon Prince",
+        "author": "Long Wei",
+        "genre": "Fantasy",
+        "status": "ongoing",
+        "rating": "4.7",
+        "views": 1500000,
+        "cover": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=young%20dragon%20prince%20fantasy%20medieval%20kingdom%20novel%20cover%20art%20golden%20crown%20magical%20dragon%20scales&image_size=portrait_4_3",
+        "description": "Born with the blood of ancient dragons, Prince Yan Long must hide his true nature from those who would fear or exploit him. When a dark force threatens his kingdom, he must embrace his heritage and unleash the power of the dragon within. Follow his journey as he discovers the truth about his lineage and fights to protect what he loves.",
+        "updatedAt": "2024-01-15T12:00:00Z",
+        "chapters": [
+            {
+                "id": "dc1",
+                "number": 1,
+                "title": "The Hidden Secret",
+                "wordCount": 3300,
+                "updatedAt": "2024-01-01T12:00:00Z"
+            },
+            {
+                "id": "dc2",
+                "number": 2,
+                "title": "First Transformation",
+                "wordCount": 3500,
+                "updatedAt": "2024-01-02T12:00:00Z"
+            },
+            {
+                "id": "dc3",
+                "number": 3,
+                "title": "The Threat",
+                "wordCount": 3700,
+                "updatedAt": "2024-01-03T12:00:00Z"
+            }
+        ]
+    }
+]

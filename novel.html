@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read {novel_title} - A translated Chinese novel in English">
+    <meta name="keywords" content="English novel, translated, reading, fiction">
+    <title>{novel_title} - Novel Translation Hub</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5387839826697987" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="app">
+        <header id="header">
+            <nav class="navbar">
+                <div class="nav-container">
+                    <div class="nav-logo">
+                        <a href="index.html"><i class="fas fa-book-open"></i> Novel Hub</a>
+                    </div>
+                    <div class="nav-menu" id="navMenu">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="novels.html" class="nav-link">Novels</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="ad-container ad-top">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-5387839826697987"
+                     data-ad-slot="REPLACE_WITH_AD_SLOT_DETAIL_TOP"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <section class="novel-detail" id="novelDetail">
+                <div class="container">
+                    <div class="novel-info">
+                        <div class="novel-cover">
+                            <img id="novelCover" src="" alt="Novel Cover">
+                        </div>
+                        <div class="novel-meta">
+                            <h1 id="novelTitle"></h1>
+                            <div class="novel-author">By <span id="novelAuthor"></span></div>
+                            <div class="novel-tags">
+                                <span id="novelGenre"></span>
+                                <span id="novelStatus"></span>
+                            </div>
+                            <div class="novel-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-eye"></i>
+                                    <span id="novelViews"></span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-star"></i>
+                                    <span id="novelRating"></span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-book-open"></i>
+                                    <span id="novelChapters"></span>
+                                </div>
+                            </div>
+                            <p id="novelDescription"></p>
+                            <div class="novel-actions">
+                                <a href="#" id="readNowBtn" class="btn btn-primary">Read Now</a>
+                                <button class="btn btn-secondary" id="addToFavorites">
+                                    <i class="far fa-heart"></i> Add to Favorites
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="ad-container ad-middle">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-5387839826697987"
+                     data-ad-slot="REPLACE_WITH_AD_SLOT_DETAIL_MIDDLE"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <section class="chapters-list">
+                <div class="container">
+                    <h2 class="section-title">Chapters</h2>
+                    <div class="chapters-content">
+                        <div class="chapter-nav">
+                            <button id="prevChapterBtn" class="btn btn-secondary">
+                                <i class="fas fa-chevron-left"></i> Previous
+                            </button>
+                            <button id="nextChapterBtn" class="btn btn-primary">
+                                Next <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="chapter-filter">
+                            <select id="chapterRange">
+                                <option value="all">All Chapters</option>
+                                <option value="1-50">Chapter 1-50</option>
+                                <option value="51-100">Chapter 51-100</option>
+                                <option value="latest">Latest 20 Chapters</option>
+                            </select>
+                        </div>
+                        <div class="chapter-items" id="chapterItems">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="ad-container ad-bottom">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-5387839826697987"
+                     data-ad-slot="REPLACE_WITH_AD_SLOT_DETAIL_BOTTOM"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </main>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>About Us</h3>
+                        <p>Novel Translation Hub brings you the best Chinese novels translated into English. We strive to provide high-quality translations for readers worldwide.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="novels.html">All Novels</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <p>Email: contact@noveltranslationhub.com</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Novel Translation Hub. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

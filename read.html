@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read {chapter_title} of {novel_title} - English translation">
+    <meta name="keywords" content="reading, novel, chapter, translated">
+    <title>{chapter_title} - {novel_title} - Novel Translation Hub</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5387839826697987" crossorigin="anonymous"></script>
+</head>
+<body class="reading-mode">
+    <div id="app">
+        <header id="header" class="reading-header">
+            <nav class="navbar">
+                <div class="nav-container">
+                    <div class="nav-left">
+                        <button id="backBtn" class="nav-btn" aria-label="Back to novel">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <a href="index.html" class="nav-logo reading-logo">
+                            <i class="fas fa-book-open"></i> Novel Hub
+                        </a>
+                    </div>
+                    <div class="nav-center">
+                        <span id="readingProgress"></span>
+                    </div>
+                    <div class="nav-right">
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button id="settingsBtn" class="nav-btn" aria-label="Reading settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="ad-container ad-top">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-5387839826697987"
+                     data-ad-slot="REPLACE_WITH_AD_SLOT_READ_TOP"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <section class="reading-content">
+                <div class="container">
+                    <div class="chapter-header">
+                        <h1 id="chapterTitle"></h1>
+                        <div class="chapter-meta">
+                            <span id="novelName"></span>
+                            <span class="divider">|</span>
+                            <span id="chapterNumber"></span>
+                        </div>
+                    </div>
+
+                    <div class="reading-toolbar">
+                        <div class="toolbar-left">
+                            <button id="fontSizeDecrease" class="toolbar-btn" aria-label="Decrease font size">
+                                <i class="fas fa-font"></i> A-
+                            </button>
+                            <button id="fontSizeIncrease" class="toolbar-btn" aria-label="Increase font size">
+                                <i class="fas fa-font"></i> A+
+                            </button>
+                            <select id="fontFamily">
+                                <option value="serif">Serif</option>
+                                <option value="sans-serif">Sans Serif</option>
+                                <option value="monospace">Monospace</option>
+                            </select>
+                        </div>
+                        <div class="toolbar-right">
+                            <button id="bookmarkBtn" class="toolbar-btn" aria-label="Add bookmark">
+                                <i class="far fa-bookmark"></i>
+                            </button>
+                            <button id="tableOfContentsBtn" class="toolbar-btn" aria-label="Table of contents">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="ad-container ad-chapter-top">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-5387839826697987"
+                             data-ad-slot="REPLACE_WITH_AD_SLOT_CHAPTER_TOP"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+
+                    <article id="chapterContent" class="chapter-content">
+                    </article>
+
+                    <div class="ad-container ad-chapter-bottom">
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-5387839826697987"
+                             data-ad-slot="REPLACE_WITH_AD_SLOT_CHAPTER_BOTTOM"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+
+                    <div class="chapter-nav-buttons">
+                        <button id="prevChapter" class="btn btn-secondary">
+                            <i class="fas fa-chevron-left"></i> Previous Chapter
+                        </button>
+                        <button id="nextChapter" class="btn btn-primary">
+                            Next Chapter <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="reading-progress-bar">
+                        <div class="progress-track">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="ad-container ad-bottom">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-5387839826697987"
+                     data-ad-slot="REPLACE_WITH_AD_SLOT_READ_BOTTOM"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </main>
+
+        <div id="tableOfContentsModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Table of Contents</h3>
+                    <button id="closeTocModal" class="modal-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="tocList" class="toc-list">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="settingsModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Reading Settings</h3>
+                    <button id="closeSettingsModal" class="modal-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="setting-item">
+                        <label>Font Size</label>
+                        <input type="range" id="fontSizeSlider" min="14" max="28" value="18">
+                        <span id="fontSizeValue">18px</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>Line Height</label>
+                        <input type="range" id="lineHeightSlider" min="1.5" max="2.5" step="0.1" value="1.8">
+                        <span id="lineHeightValue">1.8</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>Page Width</label>
+                        <input type="range" id="pageWidthSlider" min="60" max="100" value="80">
+                        <span id="pageWidthValue">80%</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>Theme</label>
+                        <div class="theme-options">
+                            <button class="theme-option active" data-theme="light">
+                                <span class="theme-preview light-preview"></span>
+                                Light
+                            </button>
+                            <button class="theme-option" data-theme="dark">
+                                <span class="theme-preview dark-preview"></span>
+                                Dark
+                            </button>
+                            <button class="theme-option" data-theme="sepia">
+                                <span class="theme-preview sepia-preview"></span>
+                                Sepia
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>About Us</h3>
+                        <p>Novel Translation Hub brings you the best Chinese novels translated into English. We strive to provide high-quality translations for readers worldwide.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="novels.html">All Novels</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <p>Email: contact@noveltranslationhub.com</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Novel Translation Hub. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
