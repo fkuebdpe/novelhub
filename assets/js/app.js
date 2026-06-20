@@ -12,6 +12,168 @@ let settings = {
     pageWidth: 80
 };
 
+const fallbackNovels = [
+    {
+        "id": "rebirth-of-the-legendary-sword-master",
+        "title": "Rebirth of the Legendary Sword Master",
+        "author": "Wei Qian",
+        "genre": "Fantasy",
+        "status": "ongoing",
+        "rating": "4.8",
+        "views": 2500000,
+        "cover": "https://via.placeholder.com/300x400?text=Novel+Cover",
+        "description": "After dying at the hands of his enemies, the legendary sword master Chen Fan is reborn back to his youth. Armed with the knowledge of his past life, he must now walk the path of cultivation again.",
+        "updatedAt": "2024-01-15T10:30:00Z",
+        "chapters": [
+            { "id": "ch1", "number": 1, "title": "Rebirth", "wordCount": 3500, "updatedAt": "2024-01-01T08:00:00Z" },
+            { "id": "ch2", "number": 2, "title": "The Path of Swords", "wordCount": 3200, "updatedAt": "2024-01-02T08:00:00Z" },
+            { "id": "ch3", "number": 3, "title": "First Blood", "wordCount": 3800, "updatedAt": "2024-01-03T08:00:00Z" }
+        ]
+    },
+    {
+        "id": "the-emperors-concubine",
+        "title": "The Emperor's Concubine",
+        "author": "Ling Yue",
+        "genre": "Romance",
+        "status": "completed",
+        "rating": "4.6",
+        "views": 1800000,
+        "cover": "https://via.placeholder.com/300x400?text=Novel+Cover",
+        "description": "In the treacherous world of the imperial harem, a young girl from a fallen noble family must navigate through schemes and intrigues to survive.",
+        "updatedAt": "2024-01-14T14:00:00Z",
+        "chapters": [
+            { "id": "tc1", "number": 1, "title": "Entering the Palace", "wordCount": 3000, "updatedAt": "2024-01-01T09:00:00Z" },
+            { "id": "tc2", "number": 2, "title": "First Encounter", "wordCount": 3200, "updatedAt": "2024-01-02T09:00:00Z" }
+        ]
+    },
+    {
+        "id": "city-of-shadows",
+        "title": "City of Shadows",
+        "author": "Chen Mo",
+        "genre": "Action",
+        "status": "ongoing",
+        "rating": "4.7",
+        "views": 1200000,
+        "cover": "https://via.placeholder.com/300x400?text=Novel+Cover",
+        "description": "In the bustling metropolis, Lin Hao, a former special forces operative, is drawn into a dark underworld after his sister's disappearance.",
+        "updatedAt": "2024-01-15T09:00:00Z",
+        "chapters": [
+            { "id": "sc1", "number": 1, "title": "The Missing Sister", "wordCount": 3400, "updatedAt": "2024-01-01T10:00:00Z" }
+        ]
+    },
+    {
+        "id": "journey-to-the-west-reborn",
+        "title": "Journey to the West: Reborn",
+        "author": "Wu Cheng'en Jr.",
+        "genre": "Adventure",
+        "status": "ongoing",
+        "rating": "4.9",
+        "views": 3200000,
+        "cover": "https://via.placeholder.com/300x400?text=Novel+Cover",
+        "description": "A modern man is mysteriously transported into the world of Journey to the West, becoming the legendary Monkey King.",
+        "updatedAt": "2024-01-15T11:00:00Z",
+        "chapters": [
+            { "id": "jc1", "number": 1, "title": "Rebirth as the Monkey King", "wordCount": 4000, "updatedAt": "2024-01-01T11:00:00Z" }
+        ]
+    },
+    {
+        "id": "my-cute-roommate",
+        "title": "My Cute Roommate",
+        "author": "Xiao Mi",
+        "genre": "Comedy",
+        "status": "completed",
+        "rating": "4.5",
+        "views": 900000,
+        "cover": "https://via.placeholder.com/300x400?text=Novel+Cover",
+        "description": "Living with the energetic and quirky Su Xiaoxiao turns Lin Yu's ordinary life into a hilarious adventure.",
+        "updatedAt": "2024-01-13T16:00:00Z",
+        "chapters": [
+            { "id": "mc1", "number": 1, "title": "The Unexpected Roommate", "wordCount": 2800, "updatedAt": "2024-01-01T14:00:00Z" }
+        ]
+    },
+    {
+        "id": "dragon-prince",
+        "title": "Dragon Prince",
+        "author": "Long Wei",
+        "genre": "Fantasy",
+        "status": "ongoing",
+        "rating": "4.7",
+        "views": 1500000,
+        "cover": "https://via.placeholder.com/300x400?text=Novel+Cover",
+        "description": "Born with the blood of ancient dragons, Prince Yan Long must hide his true nature from those who would fear him.",
+        "updatedAt": "2024-01-15T12:00:00Z",
+        "chapters": [
+            { "id": "dc1", "number": 1, "title": "The Hidden Secret", "wordCount": 3300, "updatedAt": "2024-01-01T12:00:00Z" }
+        ]
+    }
+];
+
+const fallbackChapters = {
+    "ch1": {
+        "id": "ch1",
+        "title": "Rebirth",
+        "novelId": "rebirth-of-the-legendary-sword-master",
+        "number": 1,
+        "wordCount": 3500,
+        "content": "The world spun around Chen Fan as he lay dying on the cold stone floor of the forbidden chamber. Blood trickled from the corner of his mouth, staining the ancient runes beneath him. His once-powerful body was now nothing but a shell, broken and empty.\n\n\"You thought you could defeat us, Chen Fan?\" A mocking voice echoed through the chamber. \"The Heavenly Sword Sect will never fall into the hands of a mere mortal.\"",
+        "updatedAt": "2024-01-01T08:00:00Z"
+    },
+    "ch2": {
+        "id": "ch2",
+        "title": "The Path of Swords",
+        "novelId": "rebirth-of-the-legendary-sword-master",
+        "number": 2,
+        "wordCount": 3200,
+        "content": "Chen Fan opened his eyes to find himself lying on a rough wooden bed. The scent of aged wood and incense filled his nostrils. Sunlight streamed through the narrow window, casting warm patterns on the floor.\n\n\"Where am I?\" he whispered, his voice hoarse and unfamiliar. He looked down at his hands - they were small, calloused, but definitely not the hands of a powerful sword master. These were the hands of a child.",
+        "updatedAt": "2024-01-02T08:00:00Z"
+    },
+    "tc1": {
+        "id": "tc1",
+        "title": "Entering the Palace",
+        "novelId": "the-emperors-concubine",
+        "number": 1,
+        "wordCount": 3000,
+        "content": "The grand gates of the imperial palace loomed before Li Wei as she stepped out of the sedan chair. Her heart raced with a mix of fear and anticipation. Once a noble lady, she was now entering the palace as a mere concubine, her family's fate resting on her shoulders.\n\nThe palace walls seemed to stretch endlessly, adorned with intricate carvings of dragons and phoenixes. Servants scurried about, their heads bowed in deference to the imperial family.",
+        "updatedAt": "2024-01-01T09:00:00Z"
+    },
+    "sc1": {
+        "id": "sc1",
+        "title": "The Missing Sister",
+        "novelId": "city-of-shadows",
+        "number": 1,
+        "wordCount": 3400,
+        "content": "Lin Hao slammed the door to his apartment shut, his fists clenched in anger. The note on the table burned in his mind - his sister Lin Xue was gone, taken by someone or something he couldn't see.\n\n\"Xue'er...\" he whispered, staring at the empty chair where she usually sat. The apartment felt cold without her presence, without her laughter echoing through the rooms.",
+        "updatedAt": "2024-01-01T10:00:00Z"
+    },
+    "jc1": {
+        "id": "jc1",
+        "title": "Rebirth as the Monkey King",
+        "novelId": "journey-to-the-west-reborn",
+        "number": 1,
+        "wordCount": 4000,
+        "content": "Zhang Wei had been reading Journey to the West for the hundredth time when the world suddenly shifted. One moment he was sitting in his apartment, and the next he found himself surrounded by towering trees and exotic creatures.\n\n\"What the...\" he muttered, looking down at his hands. They were covered in golden fur, and his body felt different - stronger, more agile. He lifted a hand and saw that he had five fingers, each tipped with sharp claws.",
+        "updatedAt": "2024-01-01T11:00:00Z"
+    },
+    "mc1": {
+        "id": "mc1",
+        "title": "The Unexpected Roommate",
+        "novelId": "my-cute-roommate",
+        "number": 1,
+        "wordCount": 2800,
+        "content": "Lin Yu stood at the door of his new apartment, key in hand. He had just moved to the city for college and was looking forward to some peace and quiet. But as he opened the door, he was greeted by a scene he never expected.\n\nA girl with messy brown hair was sitting on his couch, eating a bowl of instant noodles while watching anime. She looked up at him with wide eyes, noodles hanging from her mouth.",
+        "updatedAt": "2024-01-01T14:00:00Z"
+    },
+    "dc1": {
+        "id": "dc1",
+        "title": "The Hidden Secret",
+        "novelId": "dragon-prince",
+        "number": 1,
+        "wordCount": 3300,
+        "content": "Prince Yan Long paced restlessly in his chamber, his fingers brushing the golden scales that occasionally appeared on his arms. Since childhood, he had been warned never to reveal his secret - that he carried the blood of dragons in his veins.\n\n\"Your Highness,\" a servant called from outside the door. \"The king requests your presence in the throne room.\"",
+        "updatedAt": "2024-01-01T12:00:00Z"
+    }
+};
+
 document.addEventListener('DOMContentLoaded', async () => {
     loadSettings();
     initTheme();
@@ -48,9 +210,11 @@ function getPageName() {
 async function loadData() {
     try {
         const response = await fetch(`${API_BASE}/novels.json`);
+        if (!response.ok) throw new Error('Network response was not ok');
         novels = await response.json();
     } catch (error) {
-        console.error('Failed to load novels data:', error);
+        console.warn('Failed to load novels data from JSON file, using fallback data:', error);
+        novels = fallbackNovels;
     }
 }
 
@@ -390,6 +554,7 @@ async function loadChapter() {
     
     try {
         const response = await fetch(`${API_BASE}/chapters/${chapterId}.json`);
+        if (!response.ok) throw new Error('Network response was not ok');
         const chapterData = await response.json();
         
         const contentContainer = document.getElementById('chapterContent');
@@ -399,8 +564,17 @@ async function loadChapter() {
         
         applyReadingSettings();
     } catch (error) {
-        console.error('Failed to load chapter:', error);
-        document.getElementById('chapterContent').innerHTML = '<p>Failed to load chapter content.</p>';
+        console.warn('Failed to load chapter from JSON file, using fallback data:', error);
+        const fallbackData = fallbackChapters[chapterId];
+        if (fallbackData) {
+            const contentContainer = document.getElementById('chapterContent');
+            contentContainer.innerHTML = fallbackData.content.split('\n').map(p => 
+                p.trim() ? `<p>${p}</p>` : ''
+            ).join('');
+            applyReadingSettings();
+        } else {
+            document.getElementById('chapterContent').innerHTML = '<p>Failed to load chapter content.</p>';
+        }
     }
     
     initChapterNavigation();
