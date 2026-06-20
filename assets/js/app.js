@@ -22,12 +22,29 @@ const fallbackNovels = [
         "rating": "4.8",
         "views": 2500000,
         "cover": "https://picsum.photos/seed/swordmaster/300/400",
-        "description": "After dying at the hands of his enemies, the legendary sword master Chen Fan is reborn back to his youth. Armed with the knowledge of his past life, he must now walk the path of cultivation again.",
-        "updatedAt": "2024-01-15T10:30:00Z",
+        "description": "After dying at the hands of his enemies, the legendary sword master Chen Fan is reborn back to his youth. Armed with the knowledge of his past life, he must now walk the path of cultivation again, this time with greater determination and wisdom. Follow his journey as he rises from a humble disciple to become the strongest swordsman in the world.",
+        "updatedAt": "2024-01-20T08:00:00Z",
         "chapters": [
             { "id": "ch1", "number": 1, "title": "Rebirth", "wordCount": 3500, "updatedAt": "2024-01-01T08:00:00Z" },
             { "id": "ch2", "number": 2, "title": "The Path of Swords", "wordCount": 3200, "updatedAt": "2024-01-02T08:00:00Z" },
-            { "id": "ch3", "number": 3, "title": "First Blood", "wordCount": 3800, "updatedAt": "2024-01-03T08:00:00Z" }
+            { "id": "ch3", "number": 3, "title": "The Hidden Talent", "wordCount": 3500, "updatedAt": "2024-01-03T08:00:00Z" },
+            { "id": "ch4", "number": 4, "title": "The Mysterious Old Man", "wordCount": 3400, "updatedAt": "2024-01-04T08:00:00Z" },
+            { "id": "ch5", "number": 5, "title": "The Outer Sect Competition", "wordCount": 3600, "updatedAt": "2024-01-05T08:00:00Z" },
+            { "id": "ch6", "number": 6, "title": "Entering the Inner Sect", "wordCount": 3300, "updatedAt": "2024-01-06T08:00:00Z" },
+            { "id": "ch7", "number": 7, "title": "Inner Sect Rules", "wordCount": 3500, "updatedAt": "2024-01-07T08:00:00Z" },
+            { "id": "ch8", "number": 8, "title": "The Heavenly Sword Art", "wordCount": 3400, "updatedAt": "2024-01-08T08:00:00Z" },
+            { "id": "ch9", "number": 9, "title": "Lin Xue's Approach", "wordCount": 3200, "updatedAt": "2024-01-09T08:00:00Z" },
+            { "id": "ch10", "number": 10, "title": "The Sect Crisis", "wordCount": 3700, "updatedAt": "2024-01-10T08:00:00Z" },
+            { "id": "ch11", "number": 11, "title": "Border Battle", "wordCount": 3600, "updatedAt": "2024-01-11T08:00:00Z" },
+            { "id": "ch12", "number": 12, "title": "Ancient Relic", "wordCount": 3500, "updatedAt": "2024-01-12T08:00:00Z" },
+            { "id": "ch13", "number": 13, "title": "Back to the Sect", "wordCount": 3300, "updatedAt": "2024-01-13T08:00:00Z" },
+            { "id": "ch14", "number": 14, "title": "Lin Xue's True Intentions", "wordCount": 3400, "updatedAt": "2024-01-14T08:00:00Z" },
+            { "id": "ch15", "number": 15, "title": "The Cultivation Bottleneck", "wordCount": 3200, "updatedAt": "2024-01-15T08:00:00Z" },
+            { "id": "ch16", "number": 16, "title": "The Sect Competition", "wordCount": 3800, "updatedAt": "2024-01-16T08:00:00Z" },
+            { "id": "ch17", "number": 17, "title": "The Sect Master's Secret", "wordCount": 3300, "updatedAt": "2024-01-17T08:00:00Z" },
+            { "id": "ch18", "number": 18, "title": "The Demonic Sect's Plot", "wordCount": 3500, "updatedAt": "2024-01-18T08:00:00Z" },
+            { "id": "ch19", "number": 19, "title": "The Crisis", "wordCount": 3600, "updatedAt": "2024-01-19T08:00:00Z" },
+            { "id": "ch20", "number": 20, "title": "The Truth Unveiled", "wordCount": 3400, "updatedAt": "2024-01-20T08:00:00Z" }
         ]
     },
     {
@@ -39,11 +56,19 @@ const fallbackNovels = [
         "rating": "4.6",
         "views": 1800000,
         "cover": "https://picsum.photos/seed/emperorconcubine/300/400",
-        "description": "In the treacherous world of the imperial harem, a young girl from a fallen noble family must navigate through schemes and intrigues to survive.",
-        "updatedAt": "2024-01-14T14:00:00Z",
+        "description": "In the treacherous world of the imperial harem, a young girl from a fallen noble family must navigate through schemes and intrigues to survive. She catches the eye of the emperor, but with that attention comes danger from jealous rivals. Will she find true love in the cold palace, or will she become another victim of power struggles?",
+        "updatedAt": "2024-01-10T09:00:00Z",
         "chapters": [
             { "id": "tc1", "number": 1, "title": "Entering the Palace", "wordCount": 3000, "updatedAt": "2024-01-01T09:00:00Z" },
-            { "id": "tc2", "number": 2, "title": "First Encounter", "wordCount": 3200, "updatedAt": "2024-01-02T09:00:00Z" }
+            { "id": "tc2", "number": 2, "title": "First Encounter", "wordCount": 3200, "updatedAt": "2024-01-02T09:00:00Z" },
+            { "id": "tc3", "number": 3, "title": "Jealous Eyes", "wordCount": 2800, "updatedAt": "2024-01-03T09:00:00Z" },
+            { "id": "tc4", "number": 4, "title": "The Empress", "wordCount": 3100, "updatedAt": "2024-01-04T09:00:00Z" },
+            { "id": "tc5", "number": 5, "title": "A Secret Alliance", "wordCount": 2900, "updatedAt": "2024-01-05T09:00:00Z" },
+            { "id": "tc6", "number": 6, "title": "The Emperor's Favor", "wordCount": 3300, "updatedAt": "2024-01-06T09:00:00Z" },
+            { "id": "tc7", "number": 7, "title": "The Empress's Revenge", "wordCount": 3500, "updatedAt": "2024-01-07T09:00:00Z" },
+            { "id": "tc8", "number": 8, "title": "The New Empress", "wordCount": 3400, "updatedAt": "2024-01-08T09:00:00Z" },
+            { "id": "tc9", "number": 9, "title": "The Threat from the North", "wordCount": 3200, "updatedAt": "2024-01-09T09:00:00Z" },
+            { "id": "tc10", "number": 10, "title": "The Final Battle", "wordCount": 3700, "updatedAt": "2024-01-10T09:00:00Z" }
         ]
     },
     {
@@ -55,10 +80,19 @@ const fallbackNovels = [
         "rating": "4.7",
         "views": 1200000,
         "cover": "https://picsum.photos/seed/cityshadows/300/400",
-        "description": "In the bustling metropolis, Lin Hao, a former special forces operative, is drawn into a dark underworld after his sister's disappearance.",
-        "updatedAt": "2024-01-15T09:00:00Z",
+        "description": "In the bustling metropolis of Jiangcheng, there exists a hidden world of assassins, mercenaries, and secret organizations. Lin Hao, a former special forces operative, is drawn into this dark underworld after his sister's disappearance. With his combat skills and sharp instincts, he must uncover the truth behind her vanishing and confront the powerful forces that rule the city's shadows.",
+        "updatedAt": "2024-01-10T10:00:00Z",
         "chapters": [
-            { "id": "sc1", "number": 1, "title": "The Missing Sister", "wordCount": 3400, "updatedAt": "2024-01-01T10:00:00Z" }
+            { "id": "sc1", "number": 1, "title": "The Missing Sister", "wordCount": 3400, "updatedAt": "2024-01-01T10:00:00Z" },
+            { "id": "sc2", "number": 2, "title": "Entering the Underworld", "wordCount": 3600, "updatedAt": "2024-01-02T10:00:00Z" },
+            { "id": "sc3", "number": 3, "title": "First Kill", "wordCount": 3200, "updatedAt": "2024-01-03T10:00:00Z" },
+            { "id": "sc4", "number": 4, "title": "The Truth", "wordCount": 3500, "updatedAt": "2024-01-04T10:00:00Z" },
+            { "id": "sc5", "number": 5, "title": "The Counterattack", "wordCount": 3300, "updatedAt": "2024-01-05T10:00:00Z" },
+            { "id": "sc6", "number": 6, "title": "The Shadow", "wordCount": 3600, "updatedAt": "2024-01-06T10:00:00Z" },
+            { "id": "sc7", "number": 7, "title": "The Aftermath", "wordCount": 3400, "updatedAt": "2024-01-07T10:00:00Z" },
+            { "id": "sc8", "number": 8, "title": "The Final Showdown", "wordCount": 3500, "updatedAt": "2024-01-08T10:00:00Z" },
+            { "id": "sc9", "number": 9, "title": "New Beginnings", "wordCount": 3300, "updatedAt": "2024-01-09T10:00:00Z" },
+            { "id": "sc10", "number": 10, "title": "The Future", "wordCount": 3700, "updatedAt": "2024-01-10T10:00:00Z" }
         ]
     },
     {
@@ -70,10 +104,19 @@ const fallbackNovels = [
         "rating": "4.9",
         "views": 3200000,
         "cover": "https://picsum.photos/seed/journeywest/300/400",
-        "description": "A modern man is mysteriously transported into the world of Journey to the West, becoming the legendary Monkey King.",
-        "updatedAt": "2024-01-15T11:00:00Z",
+        "description": "A modern man is mysteriously transported into the world of Journey to the West, becoming the legendary Monkey King, Sun Wukong. But this is not the story he remembers from the classic novel - the world is darker, more dangerous, and the path to enlightenment is fraught with greater challenges. With his modern knowledge and the Monkey King's powers, he must forge his own destiny in this mythical realm.",
+        "updatedAt": "2024-01-10T11:00:00Z",
         "chapters": [
-            { "id": "jc1", "number": 1, "title": "Rebirth as the Monkey King", "wordCount": 4000, "updatedAt": "2024-01-01T11:00:00Z" }
+            { "id": "jc1", "number": 1, "title": "Rebirth as the Monkey King", "wordCount": 4000, "updatedAt": "2024-01-01T11:00:00Z" },
+            { "id": "jc2", "number": 2, "title": "The Mountain of Flowers and Fruit", "wordCount": 3800, "updatedAt": "2024-01-02T11:00:00Z" },
+            { "id": "jc3", "number": 3, "title": "The Golden Cudgel", "wordCount": 3500, "updatedAt": "2024-01-03T11:00:00Z" },
+            { "id": "jc4", "number": 4, "title": "Heavenly Palace", "wordCount": 4200, "updatedAt": "2024-01-04T11:00:00Z" },
+            { "id": "jc5", "number": 5, "title": "The Three Disciples", "wordCount": 3600, "updatedAt": "2024-01-05T11:00:00Z" },
+            { "id": "jc6", "number": 6, "title": "The Demon King", "wordCount": 3700, "updatedAt": "2024-01-06T11:00:00Z" },
+            { "id": "jc7", "number": 7, "title": "The Fire Mountain", "wordCount": 3500, "updatedAt": "2024-01-07T11:00:00Z" },
+            { "id": "jc8", "number": 8, "title": "The Yellow Robe Monster", "wordCount": 3600, "updatedAt": "2024-01-08T11:00:00Z" },
+            { "id": "jc9", "number": 9, "title": "The Spider Spirits", "wordCount": 3400, "updatedAt": "2024-01-09T11:00:00Z" },
+            { "id": "jc10", "number": 10, "title": "The Western Paradise", "wordCount": 4000, "updatedAt": "2024-01-10T11:00:00Z" }
         ]
     },
     {
@@ -85,10 +128,19 @@ const fallbackNovels = [
         "rating": "4.5",
         "views": 900000,
         "cover": "https://picsum.photos/seed/cuteroommate/300/400",
-        "description": "Living with the energetic and quirky Su Xiaoxiao turns Lin Yu's ordinary life into a hilarious adventure.",
-        "updatedAt": "2024-01-13T16:00:00Z",
+        "description": "Lin Yu never expected that his new roommate would be such a handful - or so cute! From morning chaos to late-night snack raids, living with the energetic and quirky Su Xiaoxiao turns his ordinary life into a hilarious adventure. Follow their daily misadventures as they navigate college life, friendship, and maybe even a little romance.",
+        "updatedAt": "2024-01-10T14:00:00Z",
         "chapters": [
-            { "id": "mc1", "number": 1, "title": "The Unexpected Roommate", "wordCount": 2800, "updatedAt": "2024-01-01T14:00:00Z" }
+            { "id": "mc1", "number": 1, "title": "The Unexpected Roommate", "wordCount": 2800, "updatedAt": "2024-01-01T14:00:00Z" },
+            { "id": "mc2", "number": 2, "title": "Morning Chaos", "wordCount": 2600, "updatedAt": "2024-01-02T14:00:00Z" },
+            { "id": "mc3", "number": 3, "title": "Midnight Snack Run", "wordCount": 2900, "updatedAt": "2024-01-03T14:00:00Z" },
+            { "id": "mc4", "number": 4, "title": "The Rainy Day", "wordCount": 2700, "updatedAt": "2024-01-04T14:00:00Z" },
+            { "id": "mc5", "number": 5, "title": "The Birthday", "wordCount": 2800, "updatedAt": "2024-01-05T14:00:00Z" },
+            { "id": "mc6", "number": 6, "title": "The First Date", "wordCount": 2700, "updatedAt": "2024-01-06T14:00:00Z" },
+            { "id": "mc7", "number": 7, "title": "The Argument", "wordCount": 2600, "updatedAt": "2024-01-07T14:00:00Z" },
+            { "id": "mc8", "number": 8, "title": "The Christmas Party", "wordCount": 2800, "updatedAt": "2024-01-08T14:00:00Z" },
+            { "id": "mc9", "number": 9, "title": "The Graduation", "wordCount": 2700, "updatedAt": "2024-01-09T14:00:00Z" },
+            { "id": "mc10", "number": 10, "title": "The Future", "wordCount": 2900, "updatedAt": "2024-01-10T14:00:00Z" }
         ]
     },
     {
@@ -100,10 +152,19 @@ const fallbackNovels = [
         "rating": "4.7",
         "views": 1500000,
         "cover": "https://picsum.photos/seed/dragonprince/300/400",
-        "description": "Born with the blood of ancient dragons, Prince Yan Long must hide his true nature from those who would fear him.",
-        "updatedAt": "2024-01-15T12:00:00Z",
+        "description": "Born with the blood of ancient dragons, Prince Yan Long must hide his true nature from those who would fear or exploit him. When a dark force threatens his kingdom, he must embrace his heritage and unleash the power of the dragon within. Follow his journey as he discovers the truth about his lineage and fights to protect what he loves.",
+        "updatedAt": "2024-01-10T12:00:00Z",
         "chapters": [
-            { "id": "dc1", "number": 1, "title": "The Hidden Secret", "wordCount": 3300, "updatedAt": "2024-01-01T12:00:00Z" }
+            { "id": "dc1", "number": 1, "title": "The Hidden Secret", "wordCount": 3300, "updatedAt": "2024-01-01T12:00:00Z" },
+            { "id": "dc2", "number": 2, "title": "First Transformation", "wordCount": 3500, "updatedAt": "2024-01-02T12:00:00Z" },
+            { "id": "dc3", "number": 3, "title": "The Threat", "wordCount": 3700, "updatedAt": "2024-01-03T12:00:00Z" },
+            { "id": "dc4", "number": 4, "title": "The Dragon Council", "wordCount": 3400, "updatedAt": "2024-01-04T12:00:00Z" },
+            { "id": "dc5", "number": 5, "title": "The Final Battle", "wordCount": 3600, "updatedAt": "2024-01-05T12:00:00Z" },
+            { "id": "dc6", "number": 6, "title": "The New Era", "wordCount": 3500, "updatedAt": "2024-01-06T12:00:00Z" },
+            { "id": "dc7", "number": 7, "title": "The Wedding", "wordCount": 3400, "updatedAt": "2024-01-07T12:00:00Z" },
+            { "id": "dc8", "number": 8, "title": "The Heir", "wordCount": 3300, "updatedAt": "2024-01-08T12:00:00Z" },
+            { "id": "dc9", "number": 9, "title": "The Dragon Festival", "wordCount": 3400, "updatedAt": "2024-01-09T12:00:00Z" },
+            { "id": "dc10", "number": 10, "title": "The Legacy", "wordCount": 3700, "updatedAt": "2024-01-10T12:00:00Z" }
         ]
     }
 ];
@@ -209,7 +270,7 @@ function getPageName() {
 
 async function loadData() {
     try {
-        const response = await fetch(`${API_BASE}/novels.json`);
+        const response = await fetch(`${API_BASE}/novels.json?cache=${Date.now()}`);
         if (!response.ok) throw new Error('Network response was not ok');
         novels = await response.json();
     } catch (error) {
@@ -553,7 +614,7 @@ async function loadChapter() {
     document.getElementById('chapterNumber').textContent = `Chapter ${currentChapter.number}`;
     
     try {
-        const response = await fetch(`${API_BASE}/chapters/${chapterId}.json`);
+        const response = await fetch(`${API_BASE}/chapters/${chapterId}.json?cache=${Date.now()}`);
         if (!response.ok) throw new Error('Network response was not ok');
         const chapterData = await response.json();
         

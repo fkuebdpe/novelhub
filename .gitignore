@@ -1,0 +1,13 @@
+# Local development scripts
+start-server.bat
+start-server-npx.bat
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
