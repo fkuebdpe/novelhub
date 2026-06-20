@@ -2,6 +2,11 @@
 start-server.bat
 start-server-npx.bat
 
+# Data generation scripts
+embed-chapters.js
+embed-chapters.py
+create-data-js.py
+
 # OS files
 .DS_Store
 Thumbs.db

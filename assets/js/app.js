@@ -269,13 +269,17 @@ function getPageName() {
 }
 
 async function loadData() {
-    try {
-        const response = await fetch(`${API_BASE}/novels.json?cache=${Date.now()}`);
-        if (!response.ok) throw new Error('Network response was not ok');
-        novels = await response.json();
-    } catch (error) {
-        console.warn('Failed to load novels data from JSON file, using fallback data:', error);
-        novels = fallbackNovels;
+    if (typeof NOVEL_DATA !== 'undefined') {
+        novels = NOVEL_DATA;
+    } else {
+        try {
+            const response = await fetch(`${API_BASE}/novels.json?cache=${Date.now()}`);
+            if (!response.ok) throw new Error('Network response was not ok');
+            novels = await response.json();
+        } catch (error) {
+            console.warn('Failed to load novels data:', error);
+            novels = fallbackNovels;
+        }
     }
 }
 
@@ -613,10 +617,23 @@ async function loadChapter() {
     document.getElementById('novelName').textContent = currentNovel.title;
     document.getElementById('chapterNumber').textContent = `Chapter ${currentChapter.number}`;
     
+    if (currentChapter.content) {
+        const contentContainer = document.getElementById('chapterContent');
+        contentContainer.innerHTML = currentChapter.content.split('\n').map(p => 
+            p.trim() ? `<p>${p}</p>` : ''
+        ).join('');
+        applyReadingSettings();
+        initChapterNavigation();
+        initTableOfContents();
+        return;
+    }
+    
     try {
         const response = await fetch(`${API_BASE}/chapters/${chapterId}.json?cache=${Date.now()}`);
         if (!response.ok) throw new Error('Network response was not ok');
         const chapterData = await response.json();
+        
+        currentChapter.content = chapterData.content;
         
         const contentContainer = document.getElementById('chapterContent');
         contentContainer.innerHTML = chapterData.content.split('\n').map(p => 
@@ -625,17 +642,8 @@ async function loadChapter() {
         
         applyReadingSettings();
     } catch (error) {
-        console.warn('Failed to load chapter from JSON file, using fallback data:', error);
-        const fallbackData = fallbackChapters[chapterId];
-        if (fallbackData) {
-            const contentContainer = document.getElementById('chapterContent');
-            contentContainer.innerHTML = fallbackData.content.split('\n').map(p => 
-                p.trim() ? `<p>${p}</p>` : ''
-            ).join('');
-            applyReadingSettings();
-        } else {
-            document.getElementById('chapterContent').innerHTML = '<p>Failed to load chapter content.</p>';
-        }
+        console.warn('Failed to load chapter from JSON file:', error);
+        document.getElementById('chapterContent').innerHTML = '<p>Failed to load chapter content. Please try again later.</p>';
     }
     
     initChapterNavigation();
