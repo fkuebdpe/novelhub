@@ -21,7 +21,7 @@ const fallbackNovels = [
         "status": "ongoing",
         "rating": "4.8",
         "views": 2500000,
-        "cover": "https://via.placeholder.com/300x400?text=Novel+Cover",
+        "cover": "https://picsum.photos/seed/swordmaster/300/400",
         "description": "After dying at the hands of his enemies, the legendary sword master Chen Fan is reborn back to his youth. Armed with the knowledge of his past life, he must now walk the path of cultivation again.",
         "updatedAt": "2024-01-15T10:30:00Z",
         "chapters": [
@@ -38,7 +38,7 @@ const fallbackNovels = [
         "status": "completed",
         "rating": "4.6",
         "views": 1800000,
-        "cover": "https://via.placeholder.com/300x400?text=Novel+Cover",
+        "cover": "https://picsum.photos/seed/emperorconcubine/300/400",
         "description": "In the treacherous world of the imperial harem, a young girl from a fallen noble family must navigate through schemes and intrigues to survive.",
         "updatedAt": "2024-01-14T14:00:00Z",
         "chapters": [
@@ -54,7 +54,7 @@ const fallbackNovels = [
         "status": "ongoing",
         "rating": "4.7",
         "views": 1200000,
-        "cover": "https://via.placeholder.com/300x400?text=Novel+Cover",
+        "cover": "https://picsum.photos/seed/cityshadows/300/400",
         "description": "In the bustling metropolis, Lin Hao, a former special forces operative, is drawn into a dark underworld after his sister's disappearance.",
         "updatedAt": "2024-01-15T09:00:00Z",
         "chapters": [
@@ -69,7 +69,7 @@ const fallbackNovels = [
         "status": "ongoing",
         "rating": "4.9",
         "views": 3200000,
-        "cover": "https://via.placeholder.com/300x400?text=Novel+Cover",
+        "cover": "https://picsum.photos/seed/journeywest/300/400",
         "description": "A modern man is mysteriously transported into the world of Journey to the West, becoming the legendary Monkey King.",
         "updatedAt": "2024-01-15T11:00:00Z",
         "chapters": [
@@ -84,7 +84,7 @@ const fallbackNovels = [
         "status": "completed",
         "rating": "4.5",
         "views": 900000,
-        "cover": "https://via.placeholder.com/300x400?text=Novel+Cover",
+        "cover": "https://picsum.photos/seed/cuteroommate/300/400",
         "description": "Living with the energetic and quirky Su Xiaoxiao turns Lin Yu's ordinary life into a hilarious adventure.",
         "updatedAt": "2024-01-13T16:00:00Z",
         "chapters": [
@@ -99,7 +99,7 @@ const fallbackNovels = [
         "status": "ongoing",
         "rating": "4.7",
         "views": 1500000,
-        "cover": "https://via.placeholder.com/300x400?text=Novel+Cover",
+        "cover": "https://picsum.photos/seed/dragonprince/300/400",
         "description": "Born with the blood of ancient dragons, Prince Yan Long must hide his true nature from those who would fear him.",
         "updatedAt": "2024-01-15T12:00:00Z",
         "chapters": [
