@@ -235,29 +235,33 @@ const fallbackChapters = {
     }
 };
 
-document.addEventListener('DOMContentLoaded', async () => {
-    loadSettings();
-    initTheme();
-    initNav();
-    await loadData();
-    
-    const page = getPageName();
-    switch(page) {
-        case 'index':
-            renderFeaturedNovels();
-            renderLatestChapters();
-            break;
-        case 'novels':
-            renderNovelsList();
-            initFilters();
-            break;
-        case 'novel':
-            loadNovelDetail();
-            break;
-        case 'read':
-            loadChapter();
-            initReadingSettings();
-            break;
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+        loadSettings();
+        initTheme();
+        initNav();
+        loadData();
+        
+        const page = getPageName();
+        switch(page) {
+            case 'index':
+                renderFeaturedNovels();
+                renderLatestChapters();
+                break;
+            case 'novels':
+                renderNovelsList();
+                initFilters();
+                break;
+            case 'novel':
+                loadNovelDetail();
+                break;
+            case 'read':
+                loadChapter();
+                initReadingSettings();
+                break;
+        }
+    } catch(err) {
+        console.error('[App] DOMContentLoaded init error:', err);
     }
 });
 
@@ -268,18 +272,13 @@ function getPageName() {
     return filename.replace('.html', '');
 }
 
-async function loadData() {
-    if (typeof NOVEL_DATA !== 'undefined') {
+function loadData() {
+    if (typeof NOVEL_DATA_LITE !== 'undefined' && NOVEL_DATA_LITE) {
+        novels = NOVEL_DATA_LITE;
+    } else if (typeof NOVEL_DATA !== 'undefined' && NOVEL_DATA) {
         novels = NOVEL_DATA;
     } else {
-        try {
-            const response = await fetch(`${API_BASE}/novels.json?cache=${Date.now()}`);
-            if (!response.ok) throw new Error('Network response was not ok');
-            novels = await response.json();
-        } catch (error) {
-            console.warn('Failed to load novels data:', error);
-            novels = fallbackNovels;
-        }
+        novels = fallbackNovels;
     }
 }
 
@@ -450,7 +449,7 @@ function initFilters() {
         let filtered = novels.filter(novel => {
             const matchesSearch = novel.title.toLowerCase().includes(searchTerm) ||
                                novel.author.toLowerCase().includes(searchTerm);
-            const matchesGenre = genre === 'all' || novel.genre === genre;
+            const matchesGenre = genre === 'all' || novel.genre.toLowerCase() === genre;
             return matchesSearch && matchesGenre;
         });
         
@@ -508,7 +507,7 @@ function renderPagination(currentPage) {
     container.innerHTML = html;
 }
 
-async function loadNovelDetail() {
+function loadNovelDetail() {
     const params = new URLSearchParams(window.location.search);
     const novelId = params.get('id');
     
@@ -537,6 +536,31 @@ async function loadNovelDetail() {
     const readNowBtn = document.getElementById('readNowBtn');
     if (readNowBtn && currentNovel.chapters && currentNovel.chapters.length > 0) {
         readNowBtn.href = `read.html?novel=${novelId}&chapter=${currentNovel.chapters[0].id}`;
+    }
+    
+    // 收藏按钮
+    const addToFavoritesBtn = document.getElementById('addToFavorites');
+    if (addToFavoritesBtn) {
+        const favorites = JSON.parse(localStorage.getItem('novel_favorites') || '[]');
+        const isFav = favorites.includes(novelId);
+        if (isFav) {
+            addToFavoritesBtn.innerHTML = '<i class="fas fa-heart"></i> Favorited';
+            addToFavoritesBtn.classList.add('favorited');
+        }
+        addToFavoritesBtn.addEventListener('click', () => {
+            const favs = JSON.parse(localStorage.getItem('novel_favorites') || '[]');
+            const idx = favs.indexOf(novelId);
+            if (idx === -1) {
+                favs.push(novelId);
+                addToFavoritesBtn.innerHTML = '<i class="fas fa-heart"></i> Favorited';
+                addToFavoritesBtn.classList.add('favorited');
+            } else {
+                favs.splice(idx, 1);
+                addToFavoritesBtn.innerHTML = '<i class="far fa-heart"></i> Add to Favorites';
+                addToFavoritesBtn.classList.remove('favorited');
+            }
+            localStorage.setItem('novel_favorites', JSON.stringify(favs));
+        });
     }
     
     renderChaptersList();
@@ -589,7 +613,7 @@ function initChapterNav() {
     });
 }
 
-async function loadChapter() {
+function loadChapter() {
     const params = new URLSearchParams(window.location.search);
     const novelId = params.get('novel');
     const chapterId = params.get('chapter');
@@ -617,35 +641,25 @@ async function loadChapter() {
     document.getElementById('novelName').textContent = currentNovel.title;
     document.getElementById('chapterNumber').textContent = `Chapter ${currentChapter.number}`;
     
-    if (currentChapter.content) {
-        const contentContainer = document.getElementById('chapterContent');
-        contentContainer.innerHTML = currentChapter.content.split('\n').map(p => 
-            p.trim() ? `<p>${p}</p>` : ''
-        ).join('');
-        applyReadingSettings();
-        initChapterNavigation();
-        initTableOfContents();
-        return;
+    const contentContainer = document.getElementById('chapterContent');
+    
+    // Try to get content from CHAPTERS_DATA first
+    let chapterContent = null;
+    if (typeof CHAPTERS_DATA !== 'undefined' && CHAPTERS_DATA && CHAPTERS_DATA[chapterId]) {
+        chapterContent = CHAPTERS_DATA[chapterId].content;
+    } else if (currentChapter.content) {
+        chapterContent = currentChapter.content;
     }
     
-    try {
-        const response = await fetch(`${API_BASE}/chapters/${chapterId}.json?cache=${Date.now()}`);
-        if (!response.ok) throw new Error('Network response was not ok');
-        const chapterData = await response.json();
-        
-        currentChapter.content = chapterData.content;
-        
-        const contentContainer = document.getElementById('chapterContent');
-        contentContainer.innerHTML = chapterData.content.split('\n').map(p => 
+    if (chapterContent) {
+        contentContainer.innerHTML = chapterContent.split('\n').map(p => 
             p.trim() ? `<p>${p}</p>` : ''
         ).join('');
-        
-        applyReadingSettings();
-    } catch (error) {
-        console.warn('Failed to load chapter from JSON file:', error);
-        document.getElementById('chapterContent').innerHTML = '<p>Failed to load chapter content. Please try again later.</p>';
+    } else {
+        contentContainer.innerHTML = '<p>Chapter content not available.</p>';
     }
     
+    applyReadingSettings();
     initChapterNavigation();
     initTableOfContents();
 }
@@ -654,6 +668,8 @@ function initChapterNavigation() {
     const prevBtn = document.getElementById('prevChapter');
     const nextBtn = document.getElementById('nextChapter');
     const backBtn = document.getElementById('backBtn');
+    
+    if (!prevBtn || !nextBtn) return;
     
     const currentIndex = currentNovel.chapters.findIndex(c => c.id === currentChapter.id);
     
@@ -732,13 +748,13 @@ function initReadingSettings() {
     
     if (!settingsBtn || !settingsModal || !closeSettingsModal) return;
     
-    fontSizeSlider.value = settings.fontSize;
-    fontSizeValue.textContent = `${settings.fontSize}px`;
-    lineHeightSlider.value = settings.lineHeight;
-    lineHeightValue.textContent = settings.lineHeight;
-    pageWidthSlider.value = settings.pageWidth;
-    pageWidthValue.textContent = `${settings.pageWidth}%`;
-    fontFamily.value = settings.fontFamily;
+    if (fontSizeSlider) fontSizeSlider.value = settings.fontSize;
+    if (fontSizeValue) fontSizeValue.textContent = `${settings.fontSize}px`;
+    if (lineHeightSlider) lineHeightSlider.value = settings.lineHeight;
+    if (lineHeightValue) lineHeightValue.textContent = settings.lineHeight;
+    if (pageWidthSlider) pageWidthSlider.value = settings.pageWidth;
+    if (pageWidthValue) pageWidthValue.textContent = `${settings.pageWidth}%`;
+    if (fontFamily) fontFamily.value = settings.fontFamily;
     
     themeOptions.forEach(option => {
         if (option.dataset.theme === settings.theme) {
@@ -746,7 +762,8 @@ function initReadingSettings() {
         }
     });
     
-    settingsBtn.addEventListener('click', () => {
+    settingsBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         settingsModal.classList.add('active');
     });
     
@@ -760,28 +777,28 @@ function initReadingSettings() {
         }
     });
     
-    fontSizeSlider.addEventListener('input', (e) => {
+    fontSizeSlider?.addEventListener('input', (e) => {
         settings.fontSize = parseInt(e.target.value);
-        fontSizeValue.textContent = `${settings.fontSize}px`;
+        if (fontSizeValue) fontSizeValue.textContent = `${settings.fontSize}px`;
         applyReadingSettings();
         saveSettings();
     });
     
-    lineHeightSlider.addEventListener('input', (e) => {
+    lineHeightSlider?.addEventListener('input', (e) => {
         settings.lineHeight = parseFloat(e.target.value);
-        lineHeightValue.textContent = settings.lineHeight;
+        if (lineHeightValue) lineHeightValue.textContent = settings.lineHeight;
         applyReadingSettings();
         saveSettings();
     });
     
-    pageWidthSlider.addEventListener('input', (e) => {
+    pageWidthSlider?.addEventListener('input', (e) => {
         settings.pageWidth = parseInt(e.target.value);
-        pageWidthValue.textContent = `${settings.pageWidth}%`;
+        if (pageWidthValue) pageWidthValue.textContent = `${settings.pageWidth}%`;
         applyReadingSettings();
         saveSettings();
     });
     
-    fontFamily.addEventListener('change', (e) => {
+    fontFamily?.addEventListener('change', (e) => {
         settings.fontFamily = e.target.value;
         applyReadingSettings();
         saveSettings();

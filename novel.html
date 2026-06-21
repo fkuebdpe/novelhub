@@ -7,9 +7,16 @@
     <meta name="keywords" content="English novel, translated, reading, fiction">
     <title>{novel_title} - Novel Translation Hub</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5387839826697987" crossorigin="anonymous"></script>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <script>
+        var isLocal = window.location.protocol === 'file:';
+        if (!isLocal) {
+            document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5387839826697987" crossorigin="anonymous"><\/script>');
+        }
+    </script>
 </head>
 <body>
     <div id="app">
@@ -43,7 +50,9 @@
                      data-ad-format="auto"
                      data-full-width-responsive="true"></ins>
                 <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
+                     if (window.location.protocol !== 'file:') {
+                         try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+                     }
                 </script>
             </div>
 
@@ -94,7 +103,9 @@
                      data-ad-format="auto"
                      data-full-width-responsive="true"></ins>
                 <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
+                     if (window.location.protocol !== 'file:') {
+                         try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+                     }
                 </script>
             </div>
 
@@ -132,7 +143,9 @@
                      data-ad-format="auto"
                      data-full-width-responsive="true"></ins>
                 <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
+                     if (window.location.protocol !== 'file:') {
+                         try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+                     }
                 </script>
             </div>
         </main>
@@ -170,7 +183,7 @@
         </footer>
     </div>
 
-    <script src="assets/js/data.js"></script>
+    <script src="assets/js/data-lite.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 </html>
