@@ -12,6 +12,50 @@ let settings = {
     pageWidth: 80
 };
 
+/**
+ * Generate a reliable cover image URL.
+ * Falls back to SVG data-URI gradient placeholder for unreliable external URLs.
+ */
+function getCoverUrl(novel) {
+    const url = novel.cover || '';
+    // Use original URL if it's not from unreliable sources
+    if (url && !url.includes('picsum.photos') && !url.includes('placehold.co')) {
+        return url;
+    }
+    // Generate a beautiful SVG gradient placeholder that ALWAYS works
+    const colors = [
+        ['#1a1a2e','#16213e','#0f3460'], ['#2d132c','#801336','#c72c41'],
+        ['#1b1464','#4b0082','#8a2be2'], ['#1a3c34','#2e7d32','#4caf50'],
+        ['#4a148c','#7b1fa2','#e040fb'], ['#bf360f','#e64a19','#ff7043'],
+        ['#004d40','#00695c','#26a69a'], ['#311b92','#512da8','#9575cd'],
+        ['#1a237e','#283593','#5c6bc0'], ['#263238','#37474f','#607d8b']
+    ];
+    // Deterministic color based on novel id for consistency
+    let hash = 0;
+    for (let i = 0; i < (novel.id || '').length; i++) {
+        hash = ((hash << 5) - hash) + novel.id.charCodeAt(i);
+        hash |= 0;
+    }
+    const colorSet = colors[Math.abs(hash) % colors.length];
+    const initial = (novel.title || 'N').charAt(0).toUpperCase();
+    const genreLabel = (novel.genre || 'Novel').toUpperCase().substring(0, 3);
+
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400" viewBox="0 0 300 400">
+        <defs>
+            <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:${colorSet[0]}"/>
+                <stop offset="50%" style="stop-color:${colorSet[1]}"/>
+                <stop offset="100%" style="stop-color:${colorSet[2]}"/>
+            </linearGradient>
+        </defs>
+        <rect width="300" height="400" fill="url(#g)" rx="8"/>
+        <text x="150" y="180" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="72" font-family="Georgia,serif" font-weight="bold">${initial}</text>
+        <text x="150" y="220" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="14" font-family="Arial,sans-serif" letter-spacing="4">${genreLabel}</text>
+        <line x1="50" y1="250" x2="250" y2="250" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    </svg>`;
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+}
+
 const fallbackNovels = [
     {
         "id": "rebirth-of-the-legendary-sword-master",
@@ -235,13 +279,13 @@ const fallbackChapters = {
     }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     try {
         loadSettings();
         initTheme();
         initNav();
-        loadData();
-        
+        await loadData();
+
         const page = getPageName();
         switch(page) {
             case 'index':
@@ -272,13 +316,28 @@ function getPageName() {
     return filename.replace('.html', '');
 }
 
-function loadData() {
+async function loadData() {
+    // 1. Try inline data first
     if (typeof NOVEL_DATA_LITE !== 'undefined' && NOVEL_DATA_LITE) {
         novels = NOVEL_DATA_LITE;
     } else if (typeof NOVEL_DATA !== 'undefined' && NOVEL_DATA) {
         novels = NOVEL_DATA;
     } else {
         novels = fallbackNovels;
+    }
+
+    // 2. Try to enrich with full data from novels.json (more chapters + content)
+    try {
+        const resp = await fetch('assets/data/novels.json');
+        if (resp.ok) {
+            const fullData = await resp.json();
+            if (fullData && fullData.length > 0) {
+                novels = fullData;
+                console.log('[App] Loaded full data from novels.json:', fullData.length, 'novels');
+            }
+        }
+    } catch(e) {
+        console.log('[App] novels.json not available, using inline data');
     }
 }
 
@@ -373,7 +432,7 @@ function renderLatestChapters() {
         <div class="chapter-item" data-novel="${chapter.novelId}" data-chapter="${chapter.id}">
             <div class="chapter-item-left">
                 <div class="chapter-item-cover">
-                    <img src="${chapter.cover}" alt="${chapter.novelTitle}">
+                    <img src="${getCoverUrl({id: chapter.novelId, title: chapter.novelTitle, genre: ''})}" alt="${chapter.novelTitle}">
                 </div>
                 <div class="chapter-item-info">
                     <h4>${chapter.title}</h4>
@@ -417,7 +476,7 @@ function createNovelCard(novel) {
     return `
         <div class="novel-card" data-id="${novel.id}">
             <div class="novel-card-cover">
-                <img src="${novel.cover}" alt="${novel.title}">
+                <img src="${getCoverUrl(novel)}" alt="${novel.title}">
                 <span class="novel-card-badge">${status.charAt(0).toUpperCase() + status.slice(1)}</span>
             </div>
             <div class="novel-card-content">
@@ -531,7 +590,7 @@ function loadNovelDetail() {
     document.getElementById('novelRating').textContent = currentNovel.rating || '4.0';
     document.getElementById('novelChapters').textContent = `${currentNovel.chapters?.length || 0} chapters`;
     document.getElementById('novelDescription').textContent = currentNovel.description;
-    document.getElementById('novelCover').src = currentNovel.cover;
+    document.getElementById('novelCover').src = getCoverUrl(currentNovel);
     
     const readNowBtn = document.getElementById('readNowBtn');
     if (readNowBtn && currentNovel.chapters && currentNovel.chapters.length > 0) {
